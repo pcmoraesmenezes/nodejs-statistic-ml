@@ -56,6 +56,19 @@ app.get('/coefficients', async (req, res) => {
     }
 });
 
+app.get('/plot', async (req, res) => {
+    try {
+        const response = await axios.get('http://127.0.0.1:5000/plot', {
+            withCredentials: true,
+            headers: { Cookie: sessionCookies },
+        });
+
+        res.send(response.data);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Node.js server running on http://localhost:${PORT}`);
 });
