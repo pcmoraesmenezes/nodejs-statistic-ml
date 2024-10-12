@@ -1,6 +1,8 @@
 const trainForm = document.getElementById('train-form');
 const predictForm = document.getElementById('predict-form');
 const predictionResult = document.getElementById('prediction-result');
+const plotButton = document.getElementById('plot-button');
+const plotContainer = document.getElementById('plot-container');
 
 trainForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -51,5 +53,20 @@ predictForm.addEventListener('submit', async (event) => {
     } catch (error) {
         console.error('Error during prediction:', error);
         predictionResult.innerText = 'Failed to make a prediction. Please try again.';
+    }
+});
+
+plotButton.addEventListener('click', async () => {
+    try {
+        const response = await fetch('http://localhost:3000/plot', {
+            method: 'GET',
+            credentials: 'include',
+        });
+
+        const html = await response.text();
+        plotContainer.innerHTML = html;
+    } catch (error) {
+        console.error('Error generating plot:', error);
+        plotContainer.innerHTML = '<p>Failed to generate plot. Please try again.</p>';
     }
 });
