@@ -6,7 +6,6 @@
         <title>Linear Regression Model</title>
         <link rel="stylesheet" href="styles.css">
     
-        <!-- MathJax Library for Rendering Beautiful Math -->
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
 <body>
@@ -16,7 +15,6 @@
     </header>
 
     <main>
-        <!-- Explanation Section -->
         <section id="explanation">
             <h2>What is Linear Regression?</h2>
             <p>
@@ -37,7 +35,6 @@
             </div>
         </section>
 
-        <!-- Use Cases Section -->
         <section id="use-cases">
             <h2>When is Linear Regression Used?</h2>
             <p>Linear regression is widely applied in different fields for predictive analysis:</p>
@@ -49,7 +46,6 @@
             </div>
         </section>
 
-        <!-- Calculations Section -->
         <section id="calculations">
             <h2>Calculations Behind Linear Regression</h2>
             <p>
@@ -87,11 +83,9 @@
         </section>
         
 
-        <!-- Demo Section -->
         <section id="demo">
             <h2>Try the Model</h2>
         
-            <!-- Train the Model -->
             <form id="train-form">
                 <h3>Train the Model</h3>
                 <label for="x-values">Input X Values (comma-separated):</label>
@@ -103,7 +97,6 @@
                 <button type="submit">Train</button>
             </form>
         
-            <!-- Make a Prediction -->
             <form id="predict-form">
                 <h3>Make a Prediction</h3>
                 <label for="predict-value">Predict for X:</label>
@@ -114,6 +107,13 @@
         
             <div id="prediction-result"></div>
         </section>
+
+        <section id="plot-section">
+            <h3>Plot the Regression Line</h3>
+            <button id="plot-button">Generate Plot</button>
+            <div id="plot-container" style="margin-top: 10px; text-align: center;"></div>
+        </section>
+
     </main>
 
     <script src="script.js"></script>
