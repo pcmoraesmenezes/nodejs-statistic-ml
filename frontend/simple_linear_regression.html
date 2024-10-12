@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linear Regression Model</title>
+        <link rel="stylesheet" href="styles.css">
+    
+        <!-- MathJax Library for Rendering Beautiful Math -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+<body>
+    <header>
+        <h1>Understanding Linear Regression</h1>
+        <p>A simple and practical guide to linear regression.</p>
+    </header>
+
+    <main>
+        <!-- Explanation Section -->
+        <section id="explanation">
+            <h2>What is Linear Regression?</h2>
+            <p>
+                Linear regression is a statistical method used to model the relationship between 
+                a dependent variable (target) and one or more independent variables (features). 
+                The purpose is to predict the dependent variable based on the input data. In the simplest form, 
+                called **simple linear regression**, the model analyzes a single independent variable.
+            </p>
+            <p>The equation representing a simple linear regression model is:</p>
+            <pre>ŷ = aX + b</pre>
+            <p>Where:</p>
+            <div class="explanation">
+                <p><strong>X</strong>: The independent variable (input)</p>
+                <p><strong>y</strong>: The dependent variable (output)</p>
+                <p><strong>ŷ</strong>: The predicted output</p>
+                <p><strong>a</strong>: The slope or angular coefficient of the line</p>
+                <p><strong>b</strong>: The intercept of the line with the y-axis</p>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section id="use-cases">
+            <h2>When is Linear Regression Used?</h2>
+            <p>Linear regression is widely applied in different fields for predictive analysis:</p>
+            <div class="explanation">
+                <p><strong>Business Forecasting:</strong> Predict future sales or customer demand.</p>
+                <p><strong>Finance:</strong> Estimate stock prices or investment returns.</p>
+                <p><strong>Scientific Research:</strong> Model relationships, such as temperature's effect on plant growth.</p>
+                <p><strong>Healthcare:</strong> Predict disease progression or patient outcomes.</p>
+            </div>
+        </section>
+
+        <!-- Calculations Section -->
+        <section id="calculations">
+            <h2>Calculations Behind Linear Regression</h2>
+            <p>
+                In linear regression, the line that best fits the data is found using the 
+                <strong>Least Squares Method</strong>, which minimizes the sum of squared errors 
+                between the observed values \(y\) and the predicted values \(\hat{y}\).
+            </p>
+        
+            <p>The general equation of the line is:</p>
+            <p>
+                \( \hat{y} = aX + b \)
+            </p>
+        
+            <h3>How to Calculate the Coefficients \(a\) and \(b\):</h3>
+            <p>The coefficients are calculated as follows:</p>
+            <div class="formula">
+                <p>
+                    \( a = \frac{n \sum (X \cdot y) - \sum X \sum y}{n \sum X^2 - (\sum X)^2} \)
+                </p>
+                <p style="margin-top: 15px;">
+                    \( b = \frac{\sum y - a \sum X}{n} \)
+                </p>
+            </div>
+        
+            <h3>Explanation of the Variables:</h3>
+            <div class="explanation">
+                <p style="margin-bottom: 15px;"><strong>n</strong>: Number of data points (observations)</p>
+                <p style="margin-bottom: 15px;">
+                    <strong>\(\sum (X \cdot y)\)</strong>: Sum of the product of X and y values
+                </p>
+                <p style="margin-bottom: 15px;"><strong>\(\sum X\)</strong>: Sum of all X values</p>
+                <p style="margin-bottom: 15px;"><strong>\(\sum y\)</strong>: Sum of all y values</p>
+                <p style="margin-bottom: 15px;"><strong>\(\sum X^2\)</strong>: Sum of the squares of all X values</p>
+            </div>
+        </section>
+        
+
+        <!-- Demo Section -->
+        <section id="demo">
+            <h2>Try the Model</h2>
+        
+            <!-- Train the Model -->
+            <form id="train-form">
+                <h3>Train the Model</h3>
+                <label for="x-values">Input X Values (comma-separated):</label>
+                <input type="text" id="x-values" placeholder="e.g., 1,2,3" required>
+        
+                <label for="y-values">Input Y Values (comma-separated):</label>
+                <input type="text" id="y-values" placeholder="e.g., 2,3,4" required>
+        
+                <button type="submit">Train</button>
+            </form>
+        
+            <!-- Make a Prediction -->
+            <form id="predict-form">
+                <h3>Make a Prediction</h3>
+                <label for="predict-value">Predict for X:</label>
+                <input type="number" id="predict-value" placeholder="Enter a value for X" required>
+        
+                <button type="submit">Predict</button>
+            </form>
+        
+            <div id="prediction-result"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
